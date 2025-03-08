@@ -1,5 +1,7 @@
 package shop_management.entity;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,6 +23,7 @@ public class Pessoa {
     private String raca;
     @Column(name = "sexo")
     private String sexo;
+    private BigDecimal saldo;
 
     // Constructors
     public Pessoa() {}
@@ -78,17 +81,23 @@ public class Pessoa {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-
-
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", idade=" + idade +
-                ", raca='" + raca + '\'' +
-                ", sexo=" + sexo +
-                '}';
+    
+    public BigDecimal getSaldo() {
+        return saldo;
     }
+    
+    @Override
+public String toString() {
+    return "Pessoa{" +
+            "id=" + id +
+            ", nome='" + nome + '\'' +
+            ", email='" + email + '\'' +
+            ", idade=" + idade +
+            ", raca='" + raca + '\'' +
+            ", sexo='" + sexo + '\'' +  // Adicionar aspas para evitar erro se for null
+            ", saldo=" + saldo +
+            '}';
+}
+
+
 }
