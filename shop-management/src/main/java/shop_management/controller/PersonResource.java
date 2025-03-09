@@ -11,33 +11,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import shop_management.entity.Pessoa;
-import shop_management.entity.PessoaDTO;
-import shop_management.service.PessoaService;
+import shop_management.entity.Person;
+import shop_management.entity.PersonDTO;
+import shop_management.service.PersonService;
 
 
 @RestController
-@RequestMapping(value = "/pessoa", produces = "application/json")
-public class PessoaResource {
-    private final PessoaService service;
+@RequestMapping(value = "/person", produces = "application/json")
+public class PersonResource {
+    private final PersonService service;
 
-    public PessoaResource(PessoaService service) {
+    public PersonResource(PersonService service) {
         this.service = service;
     }
 
     @GetMapping
-    public ResponseEntity<List<Pessoa>> findAllPessoas() {
+    public ResponseEntity<List<Person>> findAllPessoas() {
         return ResponseEntity.ok(service.findAll());
     }
 
     @PostMapping
-    public ResponseEntity<List<Pessoa>> savePeople(@RequestBody List<Pessoa> pessoas) {
-        return ResponseEntity.ok(service.savePessoas(pessoas));
+    public ResponseEntity<List<Person>> savePeople(@RequestBody List<Person> pessoas) {
+        return ResponseEntity.ok(service.savePersons(pessoas));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Pessoa> putMethodName(@PathVariable Long id, @RequestBody PessoaDTO pessoa) {
-        return ResponseEntity.ok(service.updatePessoa(id, pessoa));
+    public ResponseEntity<Person> putMethodName(@PathVariable Long id, @RequestBody PersonDTO pessoa) {
+        return ResponseEntity.ok(service.updatePersons(id, pessoa));
     }
     
 }

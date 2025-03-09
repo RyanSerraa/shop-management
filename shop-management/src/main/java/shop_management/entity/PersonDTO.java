@@ -1,9 +1,9 @@
 package shop_management.entity;
 
-public class PessoaDTO {
+public class PersonDTO {
     private String email;    
 
-    public PessoaDTO() {
+    public PersonDTO() {
     }
 
     public String getEmail() {
