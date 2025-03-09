@@ -9,20 +9,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "PRODUTO")
-public class Produto {
-    
+@Table(name = "PRODUCT")
+public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    private String nome;
-    
-    private BigDecimal preco;
-    
-    public Produto() {
-        }
-    
+
+    private String name;
+
+    private BigDecimal price;
+
+    public Product() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -31,24 +31,24 @@ public class Produto {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public BigDecimal getPreco() {
-        return preco;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setPreco(BigDecimal preco) {
-        this.preco = preco;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "Produto [id=" + id + ", nome=" + nome + ", preco=" + preco + "]";
+        return "Produto [id=" + id + ", nome=" + name + ", preco=" + price + "]";
     }
 }
