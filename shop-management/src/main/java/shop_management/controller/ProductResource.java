@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import shop_management.entity.Product;
 import shop_management.entity.PruductDTO;
 import shop_management.service.ProductService;
@@ -21,6 +22,8 @@ import shop_management.service.ProductService;
 
 @RestController
 @RequestMapping(value = "/product", produces = "application/json")
+@Tag(name ="Product")
+
 public class ProductResource {
     private final ProductService service;
 
