@@ -29,15 +29,10 @@ public class ProductService {
     }
 
      public List<Product> saveProduct(List<Product> produtos) {
-        List<Product> peopleToSave = produtos.stream()
+        List<Product> productToSave = produtos.stream()
                 .filter(produto -> repository.findByName(produto.getName()).isEmpty())
                 .collect(Collectors.toList());
-
-        if (peopleToSave.isEmpty()) {
-            throw new RuntimeException("Nenhuma pessoa nova para salvar, todos os emails já existem! Caso tenha outro email coloque-o");
-        }
-
-        return repository.saveAll(peopleToSave);
+        return repository.saveAll(productToSave);
     }
 
     public Product updateProduct(Long id, PruductDTO produto) {
